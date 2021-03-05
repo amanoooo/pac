@@ -11,5 +11,11 @@ var rules = [
 var direct = 'DIRECT;';
 
 function FindProxyForURL(url, host) {
-    return proxy
+    if (
+        (url.indexOf(rules[0]) > -1) || (url.indexOf(rules[1]) > -1)
+    ) {
+        return proxy
+    }
+
+    return direct
 }
